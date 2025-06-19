@@ -7,12 +7,6 @@
     - community.aws
     - amazon.aws
 
-      #  vars:
-      #region: us-east-1
-      #s3_bucket_name: tee-state-tenbucket
-      #dynamodb_table_name: terraform-lock-table
-
   roles:
     - terraform-s3-backend
-    - terraform-dynamodb
 

@@ -1,9 +1,12 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # vars file for teardown-s3-dynamodb-backend
+
 region: us-east-1
 s3_bucket_name: tee-terraform-state-bucket
-dynamodb_table_name: terraform-lock
+dynamodb_table_name: terraform-lock-table
+terraform_state_key: jenkins/terraform.tfstate
+terraform_dir: .
 read_capacity: 5
 write_capacity: 5
 hash_key: LockID
