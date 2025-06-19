@@ -1,0 +1,10 @@
+---
+- name: Tear Down Terraform Backend Infrastructure on AWS
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  collections:
+    - community.aws
+    - amazon.aws
+  roles:
+    - teardown-s3-dynamodb-backend

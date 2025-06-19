@@ -1,0 +1,9 @@
+---
+- name: Create S3 bucket for Terraform state
+  amazon.aws.s3_bucket:
+    name: "{{ s3_bucket_name }}"
+    state: present
+    region: "{{ region }}"
+    versioning: true
+      #   status: Enabled
+    tags: "{{ resource_tags }}"

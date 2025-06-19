@@ -1,0 +1,10 @@
+#SPDX-License-Identifier: MIT-0
+---
+# vars file for terraform-s3-backend
+
+region: us-east-1
+s3_bucket_name: tee-terraform-state-bucket
+resource_tags:
+  Environment: dev
+  Owner: ansible
+

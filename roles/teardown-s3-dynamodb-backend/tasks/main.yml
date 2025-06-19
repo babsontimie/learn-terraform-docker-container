@@ -1,0 +1,31 @@
+---
+- name: Empty S3 bucket before deletion (non-versioned or versioned)
+  amazon.aws.s3_object:
+    bucket: "{{ s3_bucket_name }}"
+      #state: absent
+    mode: delobj
+    region: "{{ region }}"
+  ignore_errors: yes  # useful if bucket is already empty
+
+- name: Delete S3 bucket
+  amazon.aws.s3_bucket:
+    name: "{{ s3_bucket_name }}"
+    state: absent
+    region: "{{ region }}"
+  register: s3_delete_result
+
+- name: Delete DynamoDB table
+  community.aws.dynamodb_table:
+    name: "{{ dynamodb_table_name }}"
+    region: "{{ region }}"
+    state: absent
+  register: dynamodb_delete_result
+
+- name: Print S3 deletion result
+  debug:
+    var: s3_delete_result
+
+- name: Print DynamoDB deletion result
+  debug:
+    var: dynamodb_delete_result
+

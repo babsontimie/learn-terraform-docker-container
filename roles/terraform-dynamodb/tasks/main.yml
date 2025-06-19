@@ -1,0 +1,16 @@
+---
+- name: Create DynamoDB table
+  community.aws.dynamodb_table:
+    name: "{{ dynamodb_table_name }}"
+    region: "{{ region }}"
+    hash_key_name: "{{ hash_key }}"
+    hash_key_type: "{{ hash_key_type }}"
+    read_capacity: "{{ read_capacity }}"
+    write_capacity: "{{ write_capacity }}"
+    tags: "{{ resource_tags }}"
+    state: present
+  register: dynamodb_result
+
+- name: Print result
+  debug:
+    var: dynamodb_result
