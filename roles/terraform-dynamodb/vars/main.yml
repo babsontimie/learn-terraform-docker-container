@@ -3,7 +3,7 @@
 # vars file for dynamodb_table_name
 
 region: us-east-1
-dynamodb_table_name: terraform-lockable-table
+dynamodb_table_name: terraform-lock-table
 read_capacity: 5
 write_capacity: 5
 hash_key: LockID
