@@ -1,9 +1,8 @@
 #SPDX-License-Identifier: MIT-0
 ---
-# vars file for terraform-s3-backend
+# vars file for dynamodb_table_name
 
 region: us-east-1
-s3_bucket_name: tee-state-newtenbucket
 dynamodb_table_name: terraform-lockable-table
 read_capacity: 5
 write_capacity: 5
